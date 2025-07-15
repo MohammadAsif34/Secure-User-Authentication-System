@@ -18,7 +18,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:5174",
-      "https://secure-auth-system-mohammadasif34.netlify.app/",
+      "https://secure-auth-system-mohammadasif34.netlify.app",
     ],
     credentials: true,
   })
