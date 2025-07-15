@@ -21,16 +21,18 @@ const ForgetPassword = () => {
   };
 
   const logging = async (data) => {
-    const api = "http://localhost:8800/api/v1/auth/login";
-    try {
-      const res = await axios.post(api, data, { withCredentials: true });
-      console.log(res.data);
-      alert("Login successfully");
-      navigate("/");
-    } catch (err) {
-      console.log(`Error to Logging :: ${err.message}`);
-    }
+    alert("under development!!");
+    // const api = "http://localhost:8800/api/v1/auth/login";
+    // try {
+    //   const res = await axios.post(api, data, { withCredentials: true });
+    //   console.log(res.data);
+    //   alert("Login successfully");
+    //   navigate("/");
+    // } catch (err) {
+    //   console.log(`Error to Logging :: ${err.message}`);
+    // }
   };
+
   useEffect(() => {
     if (user != null) {
       navigate("/");

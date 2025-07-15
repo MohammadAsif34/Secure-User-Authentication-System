@@ -21,15 +21,18 @@ const Login = () => {
   };
 
   const logging = async (data) => {
-    const api = "/api/v1/auth/login";
+    const api = `${import.meta.env.VITE_BASE_SERVER_API}auth/login`;
     try {
       const res = await axios.post(api, data, { withCredentials: true });
       console.log("login api::", res.data);
       setStatus(res.data);
       if (res.data?.status == 200) {
-        const getUser = await axios.get("/api/v1/user", {
-          withCredentials: true,
-        });
+        const getUser = await axios.get(
+          `${import.meta.env.VITE_BASE_SERVER_API}user`,
+          {
+            withCredentials: true,
+          }
+        );
         if (getUser.data.status == 200) {
           setUser(getUser.data.info);
           toast.success(res.data.message);

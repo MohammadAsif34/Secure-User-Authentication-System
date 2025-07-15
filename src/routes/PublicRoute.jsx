@@ -9,7 +9,7 @@ const PublicRoute = () => {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/forget" element={<ForgetPassword />} />
+      <Route path="/forget-password" element={<ForgetPassword />} />
     </Routes>
   );
 };

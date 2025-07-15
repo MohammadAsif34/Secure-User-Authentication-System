@@ -72,7 +72,7 @@ const LogoutPop = ({ popRef }) => {
   const logout = async () => {
     try {
       const res = await axios.post(
-        "/api/v1/auth/logout",
+        `${import.meta.env.VITE_BASE_SERVER_API}auth/logout`,
         {},
         { withCredentials: true }
       );
@@ -98,9 +98,11 @@ const LogoutPop = ({ popRef }) => {
             <i className="bi bi-person-circle mr-3 "></i>Profile
           </li>
         </Link>
-        <li className="px-5 py-1 hover:bg-gray-800 rounded-md">
-          <i className="bi bi-pencil-square mr-3 "></i>Edit Profile
-        </li>
+        <Link to="/forget-password">
+          <li className="px-5 py-1 hover:bg-gray-800 rounded-md">
+            <i className="bi bi-pencil-square mr-3 "></i>Edit Profile
+          </li>
+        </Link>
         <li
           className="px-5 py-1 hover:bg-gray-800 rounded-md"
           onClick={() => logout()}

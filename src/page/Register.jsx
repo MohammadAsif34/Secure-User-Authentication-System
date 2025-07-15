@@ -10,7 +10,7 @@ const Register = () => {
 
   const submit = async (data) => {
     console.log(data);
-    const api = "http://localhost:8800/api/v1/auth/register";
+    const api = `${import.meta.env.VITE_BASE_SERVER_API}auth/register`;
     try {
       const res = await axios.post(
         api,

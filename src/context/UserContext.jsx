@@ -10,9 +10,12 @@ export const UserContextProvider = ({ children }) => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const res = await axios.get("/api/v1/user", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          `${import.meta.env.VITE_BASE_SERVER_API}user`,
+          {
+            withCredentials: true,
+          }
+        );
         console.log("protected api :: ", res.data);
         setUser(res.data.info);
       } catch (error) {
